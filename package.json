@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
-    "build:css": "npx tailwindcss -i ./public/stylesheets/init.css -o ./public/stylesheets/tailwind.css"
+    "start": "nodemon app.js",
+    "build": "postcss ./public/stylesheets/init.css -o build/init.css"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -13,5 +13,11 @@
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.3.7",
+    "nodemon": "^2.0.14",
+    "postcss": "^8.3.11",
+    "tailwindcss": "^2.2.17"
   }
 }

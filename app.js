@@ -3,9 +3,9 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
 var indexRouter = require('./routes/index');
 
+const port = 3000;
 
 var app = express();
 
@@ -19,7 +19,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-
+app.listen(port, () => {
+  console.log(`Server is running on port: ${port}`);
+});
 //routes ----------------------------------
 app.use('/', indexRouter);
 
