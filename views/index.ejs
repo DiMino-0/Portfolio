@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/tailwind.css' />
+  </head>
+  <body class="font-Montserrat">
+      <!-- Header -->
+      <header class="bg-white"> 
+        <nav class="container flex items-center py-4 ">
+          <ul class="hidden sm:flex flex-1 justify-end items-center gap-12 text-black uppercase text-xl">
+            <li class="cursor-pointer text-DiMino-red">Joseph DiMino's Portfolio</li>
+          </ul>
+          <div class="flex sm:hidden flex-1 justify-end">
+            <i class="text-2xl fas fa-bars"></i>
+          </div>
+        </nav>
+      </header>
+      <!-- End Header -->
+      <!-- About -->
+      <div class='flex flex-col space-y-10'>
+      <section class="container mx-auto py-12 shadow-xl hover:shadow-2xl hover:animate-pulse">
+        <div class="flex flex-col md:flex-row">
+          <div class="md:w-1/2">
+            <h2 class="text-3xl font-bold text-DiMino-red">About Me</h2>
+            <p class="text-lg">
+              I am a full stack web developer with a passion for learning and creating. I have a background in 
+              robotics and a love for technology. I am currently looking for a college to major in Computer Science.
+            </p>
+            <p class="text-lg">
+              I am a self-taught developer with a background in business management. I have a passion for 
+              learning and creating. I am currently looking for a college to attend to major in CS. 
+            </p>
+          </div>
+          <div class="md:w-1/2">
+            <img src="../images/panda.jpg" width="100%" height = "100%" alt=""/>
+          </div>
+        </div>
+      </section>
+      <!--- End About -->
+      <!-- Skills -->
+      <section class="rounded-xl transition animate container mx-auto py-12 shadow-xl hover:shadow-2xl hover:animate-pulse">
+        <div class="flex flex-col md:flex-row">
+          <div class="md:w-1/2">
+            <h2 class="text-3xl font-bold text-DiMino-red">Skills</h2>
+            <p class="text-lg">
+              I am a full stack web developer with a passion for learning and creating. I have a background in 
+              robotics and a love for technology. I am currently looking for a college to major in Computer Science.
+            </p>
+            <p class="text-lg">
+              I am a self-taught developer with a background in business management. I have a passion for 
+              learning and creating. I am currently looking for a college to attend to major in CS. 
+            </p>
+          </div>
+          <div class="md:w-1/2">
+            <img src="../images/java.jpg" width="100%" height = "100%" alt=""/>
+          </div>
+        </div>
+      </section>
+      <!--- End Skills -->
+
+      <!--Link Section-->
+      <section class="container mx-auto">
+        <div class="container flex flex-col-reverse lg:flex-row items-center mt-14 mb-14 lg:mt-14 rounded-lg shadow-lg hover:shadow-xl">
+          <div class="flex felx-1 flex-col items-center lg:items-start mb:6">
+            <h2 class="text-DiMino-red text-3xl md:text-4 lg:text-5xl text-center lg:text-left mb-6">
+              Links
+            </h2>
+            <p class="text-DiMino-red text-lg text-center leg:text-left  mb-6">
+              <a href="https://github.com/DiMino-0" target="_blank" class="text-black">Github</a>
+            </p>
+          </div>
+        </div>
+      </section>  
+    <!--End of Link Section-->
+
+    <!--contact section-->
+    <section class="relative py-10 lg:h-screen bg-gray-50">
+      <div class="hidden lg:flex items-center absolute inset-0 w-2/5 bg-white">
+        <img class="mx-auto" src="atis-assets/illustrations/technical-support-dark-green.png" alt="">
+      </div>
+      <div class="lg:absolute inset-0 flex justify-center items-center ml-auto w-full lg:w-3/5 bg-gray-50">
+        <div class="container mx-auto px-4">
+          <div class="max-w-md mx-auto py-10">
+            <h3 class="mb-6 text-2xl">Got any question? Let’s talk about it.</h3>
+            <form action="">
+              <div class="mb-4 text-sm">
+                <span class="mr-4 font-semibold">Department:</span>
+                <label class="mr-4">
+                  <input class="mr-1" type="radio" name="department" value="1" checked="">
+                  <span>Support</span>
+                </label>
+                <label>
+                  <input class="mr-1" type="radio" name="department" value="2">
+                  <span>Sales</span>
+                </label>
+              </div>
+              <div class="mb-4">
+                <input class="w-full p-4 text-xs font-semibold leading-none bg-white rounded outline-none" type="text" placeholder="Subject">
+              </div>
+              <div class="mb-4">
+                <input class="w-full p-4 text-xs font-semibold leading-none bg-white rounded outline-none" type="text" placeholder="Name">
+              </div>
+              <div class="mb-4">
+                <input class="w-full p-4 text-xs font-semibold leading-none bg-white rounded outline-none" type="email" placeholder="name@example.com">
+              </div>
+              <div class="mb-4"><textarea class="w-full h-24 p-4 text-xs font-semibold leading-none resize-none bg-white rounded outline-none" type="text" placeholder="Message..."></textarea></div>
+              <div class="mb-4">
+                <label class="flex px-2 bg-white rounded">
+                  <input class="hidden" type="file" placeholder="Choose file.." name="Choose file">
+                  <div class="my-1 ml-auto px-4 py-3 text-xs text-white font-semibold leading-none bg-gray-500 hover:bg-gray-600 rounded cursor-pointer transition duration-200">Browse</div>
+                </label>
+              </div>
+              <div class="flex justify-between items-center">
+                <label>
+                  <input class="mr-1" type="checkbox" name="terms" value="1">
+                  <span class="text-sm font-semibold">I agree to terms and conditions.</span>
+                </label>
+                <button class="inline-block py-2 px-6 rounded-l-xl rounded-t-xl bg-green-600 hover:bg-green-700 text-gray-50 font-bold leading-loose transition duration-200">Get Started</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--End of Contact Section-->
+    <!-- Footer -->
+    <footer class="bg-white absoulte bottom-0 w-full">
+      <div class="flex flex-col items-center py-4 text-center text-sm text-black">
+        <p class="text-DiMino-red text-lg">
+          &copy; Joseph DiMino 2021-2021 
+        </p>
+      </div>
+    </footer>
+    <!-- End of Footer -->
+  </body>
+</html>
