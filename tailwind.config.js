@@ -1,15 +1,18 @@
 module.exports = {
   purge: [],
   darkMode: 'media', // or 'media' or 'class'
-  theme: {
+  theme: 
+  {
     extend: {
       keyframes: {
-        wiggle: {
+        wiggle: { 
           '0%, 100%': { transform: 'rotate(-3deg)' },
           '50%': { transform: 'rotate(3deg)' },
         },
       },
-
+      spacing:{
+        '16': '4rem',
+      },
       colors:{
         "DiMino-red": "color-black",
       }
@@ -18,17 +21,16 @@ module.exports = {
       Montserrat:["Montserrat", "sans-serif"]
     },
     container:{
-      padding: "1rem",
+      center:true,
       screens:{
         lg: "1124px",
         xl: "1124px",
         "2xl": "1124px",
-        background: "bg-white rounded-xl shadow-xl",
       },
     },
-  },
-  variants: {
-    extend: {},
-  },
-  plugins: [],
+    variants: {
+      extend: {},
+    },
+    plugins: [],
+  }
 }
