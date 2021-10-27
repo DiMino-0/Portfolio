@@ -18,14 +18,12 @@ module.exports = {
       Montserrat:["Montserrat", "sans-serif"]
     },
     container:{
-      center: true,
       padding: "1rem",
       screens:{
         lg: "1124px",
         xl: "1124px",
         "2xl": "1124px",
-        background: "bg-white shadowed-lg rounded-lg",
-        hover: "shadowed-md",
+        background: "bg-white rounded-xl shadow-xl",
       },
     },
   },
