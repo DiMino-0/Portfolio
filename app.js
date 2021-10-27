@@ -4,9 +4,9 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var indexRouter = require('./routes/index');
-
+var compression = require('compression');
+var helmet = require('helmet');
 const port = 3000;
-
 var app = express();
 
 // view engine setup
@@ -18,13 +18,16 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+//production things
+app.use(helmet());
+app.use(compression());
 
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);
 });
+
 //routes ----------------------------------
 app.use('/', indexRouter);
-
 //------------------------------------------
 
 // catch 404 and forward to error handler
