@@ -3,6 +3,8 @@
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
+html{background-color: #6b6b6b;}
+
 .btn{
     @apply shadow-md py-3 px-6 mb-6 rounded-md transition-opacity duration-300 bg-DiMino-red text-black
 }
