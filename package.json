@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "nodemon app.js",
-    "build": "postcss ./public/stylesheets/tailwind.css -o build/tailwind.css"
+    "build": "postcss ./public/stylesheets/init.css -o ./public/stylesheets/tailwind.css"
   },
   "dependencies": {
     "@headlessui/vue": "^1.4.1",
