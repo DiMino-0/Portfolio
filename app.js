@@ -3,9 +3,12 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var indexRouter = require('./routes/index');
 var compression = require('compression');
 var helmet = require('helmet');
+//routes
+var indexRouter = require('./routes/index');
+var animationRouter = require('./routes/animation');
+//server stuff
 const port = 3000;
 var app = express();
 
@@ -28,6 +31,7 @@ app.listen(port, () => {
 
 //routes ----------------------------------
 app.use('/', indexRouter);
+app.use('/animation', animationRouter);
 //------------------------------------------
 
 // catch 404 and forward to error handler
