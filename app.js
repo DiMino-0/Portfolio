@@ -1,3 +1,4 @@
+//attributes:
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -8,7 +9,8 @@ var helmet = require('helmet');
 //routes
 var indexRouter = require('./routes/index');
 var animationRouter = require('./routes/animation');
-//server stuff
+
+//server setup
 const port = 3000;
 const app = express();
 
@@ -26,7 +28,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 //production things
 app.use(helmet());
 app.use(compression());
-
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);
 });
