@@ -1,4 +1,5 @@
-import * as THREE from './node_modules/three/build/three.module.js'
+//import three js module as THREE
+import * as THREE from 'three'
 
 //making neccerary objects to animate
 const scene = new THREE.Scene();
