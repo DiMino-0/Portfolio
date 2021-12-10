@@ -4,13 +4,52 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" 
+        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" 
+        crossorigin="anonymous" 
+        referrerpolicy="no-referrer" 
+        />
+        <link rel='stylesheet' href='./stylesheets/tailwind.css'/>
         <title>Animations</title>
     </head>
 
     <body>
         <canvas id="bg"></canvas>
-        
-        <script type="module" src="../public/javascripts/main.js"></script>    
+        <!-- Add the main.js file for animations-->
+        <script src="../public/javascripts/cube.js"></script>
+            <script>
+            //rotating cube
+            var scene = new THREE.Scene();
+            var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            var renderer = new THREE.WebGLRenderer();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.body.appendChild(renderer.domElement);
+            var geometry = new THREE.BoxGeometry(1, 1, 1);
+            var material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+            var cube = new THREE.Mesh(geometry, material);
+            scene.add(cube);
+            camera.position.z = 5;
+            var animate = function () {
+                requestAnimationFrame(animate);
+                cube.rotation.x += 0.1;
+                cube.rotation.y += 0.1;
+                renderer.render(scene, camera);
+            };
+            animate();
+            //end rotating cube
+        </script>
+        <!-- add the  date in a box at the top-->
+        <div class="flex justify-between items-center bg-gray-800 p-2">
+            <div class="flex items-center">
+                <h1 class="text-white text-2xl">Animations</h1>
+            </div>
+            <div class="flex items-center">
+                <h1 class="text-white text-2xl">
+                    <!-- Date -->
+                    <%= new Date()%>
+                </h1>
+            </div>
+        </div>
     </body>
 
 </html>
