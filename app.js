@@ -31,10 +31,6 @@ const styleSources =
   "'self'",
   'https://cdnjs.cloudflare.com'
 ];
-const connectSources = 
-[
-  "'self'"
-];
 const fontSources =
 [
   "'self'",

@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "start": "nodemon app.js",
-    "buildjs": "babel ./public/js --out-dir ./public/build",
-    "buildcss": "postcss ./public/stylesheets/bootstrap.min.css --dir ./public/build",
+    "buildjs": "babel ./public/js --out-dir ./public/build/js",
+    "buildcss": "postcss ./public/stylesheets/bootstrap.css --dir ./public/build/stylesheets",
     "buildAll": "npm run buildjs && npm run buildcss"
   },
   "babel": {
