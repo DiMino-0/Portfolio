@@ -12,12 +12,9 @@ var indexRouter = require('./routes/index');
 var projectsRouter = require('./routes/projects');
 var contactRouter = require('./routes/contact');
 
-{/* <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/css/pikaday.min.css"> */}
+//server setup
+const port = 3000;
+const app = express();
 
 // Set Content Security Policies
 const scriptSources = 
@@ -37,9 +34,6 @@ const fontSources =
   'https://cdnjs.cloudflare.com'
 ];
 
-//server setup
-const port = 3000;
-const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -60,7 +54,7 @@ app.use(helmet.contentSecurityPolicy({
   }
  }));
 app.use(compression());
-app.listen(port, () => {
+app.listen(process.env.port || port, () => {
   console.log(`Server is running on port: ${port}`);
 });
 
