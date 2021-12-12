@@ -4,12 +4,19 @@
   "private": true,
   "scripts": {
     "start": "nodemon app.js",
-    "build": "postcss ./public/stylesheets/init.css -o ./public/stylesheets/tailwind.css"
+    "buildjs": "babel ./public/js --out-dir ./public/build/js",
+    "buildcss": "postcss ./public/stylesheets/bootstrap.css --dir ./public/build/stylesheets",
+    "buildAll": "npm run buildjs && npm run buildcss"
+  },
+  "babel": {
+    "presets": ["@babel/preset-env"]
   },
   "dependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
     "@headlessui/vue": "^1.4.1",
     "@heroicons/vue": "^1.0.5",
-    "3js": "^1.0.0",
     "compression": "^1.7.4",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",

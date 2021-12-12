@@ -6,9 +6,36 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var compression = require('compression');
 var helmet = require('helmet');
+
 //routes
 var indexRouter = require('./routes/index');
-var animationRouter = require('./routes/animation');
+var projectsRouter = require('./routes/projects');
+var contactRouter = require('./routes/contact');
+
+{/* <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/css/pikaday.min.css"> */}
+
+// Set Content Security Policies
+const scriptSources = 
+[
+  "'self'", 
+  'https://cdn.jsdelivr.net',
+  'https://cdnjs.cloudflare.com'
+];
+const styleSources = 
+[
+  "'self'",
+  'https://cdnjs.cloudflare.com'
+];
+const fontSources =
+[
+  "'self'",
+  'https://cdnjs.cloudflare.com'
+];
 
 //server setup
 const port = 3000;
@@ -24,9 +51,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
-//production things
-app.use(helmet());
+app.use(helmet.contentSecurityPolicy({
+  directives: {
+    defaultSrc: ["'self'"],
+    scriptSrc: scriptSources,
+    styleSrc: styleSources,
+    fontSrc: fontSources
+  }
+ }));
 app.use(compression());
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);
@@ -34,7 +66,8 @@ app.listen(port, () => {
 
 //routes ----------------------------------
 app.use('/', indexRouter);
-app.use('/animation', animationRouter);
+app.use('/contact', contactRouter);
+app.use('/projects', projectsRouter);
 //------------------------------------------
 
 // catch 404 and forward to error handler
