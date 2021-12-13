@@ -7,16 +7,10 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var compression = require('compression');
 var helmet = require('helmet');
-const app = express();
-<<<<<<< HEAD
-
 var indexRouter = require('./routes/index');
 var contactRouter = require('./routes/contact');
 var projectsRouter = require('./routes/projects');
-=======
-var portNum = app.listen(process.env.PORT || 3000);
->>>>>>> 1248ec0540ac4c374d17427342062cdba3fc6f15
-
+const app = express();
 // Set Content Security Policies
 const scriptSources = 
 [
@@ -60,18 +54,9 @@ app.listen(process.env.PORT || 3000, () => {
 });
 
 //routes ----------------------------------
-// app.use('/', indexRouter);
-// app.use('/contact', contactRouter);
-// app.use('/projects', projectsRouter);
-router.get('/', function(req, res, next) {
-  res.render('index');
-});
-router.get('/projects', function(req, res, next) {
-  res.render('projects');
-});
-router.get('/contact', function(req, res, next) {
-  res.render('contact');
-});
+app.use('/', indexRouter);
+app.use('/contact', contactRouter);
+app.use('/projects', projectsRouter);
 //------------------------------------------
 
 // catch 404 and forward to error handler
