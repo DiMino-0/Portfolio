@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon app.js",
+    "start": "node app.js",
     "buildjs": "babel ./public/js --out-dir ./public/build/js",
     "buildcss": "postcss ./public/stylesheets/bootstrap.css --dir ./public/build/stylesheets",
     "buildAll": "npm run buildjs && npm run buildcss"

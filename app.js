@@ -11,6 +11,7 @@ var indexRouter = require('./routes/index');
 var contactRouter = require('./routes/contact');
 var projectsRouter = require('./routes/projects');
 const app = express();
+
 // Set Content Security Policies
 const scriptSources = 
 [
@@ -57,7 +58,7 @@ app.listen(process.env.PORT || 3000, () => {
 app.use('/', indexRouter);
 app.use('/contact', contactRouter);
 app.use('/projects', projectsRouter);
-//------------------------------------------
+// end routes -----------------------------
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
