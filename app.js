@@ -1,16 +1,13 @@
 //attributes:
 var createError = require('http-errors');
 var express = require('express');
+var router = express.Router();
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var compression = require('compression');
 var helmet = require('helmet');
-
-//routes
-var indexRouter = require('./routes/index');
-var projectsRouter = require('./routes/projects');
-var contactRouter = require('./routes/contact');
+var portNum = server.listen(process.env.PORT || 3000);
 
 //server setup
 const port = 3000;
@@ -54,16 +51,24 @@ app.use(helmet.contentSecurityPolicy({
   }
  }));
 app.use(compression());
-var portNum = server.listen(process.env.PORT || 3000);
 app.listen(portNum);
 // app.listen(process.env.PORT || port, () => {
 //   console.log(`Server is running...`);
 // });
 
 //routes ----------------------------------
-app.use('/', indexRouter);
-app.use('/contact', contactRouter);
-app.use('/projects', projectsRouter);
+// app.use('/', indexRouter);
+// app.use('/contact', contactRouter);
+// app.use('/projects', projectsRouter);
+router.get('/', function(req, res, next) {
+  res.render('index');
+});
+router.get('/projects', function(req, res, next) {
+  res.render('projects');
+});
+router.get('/contact', function(req, res, next) {
+  res.render('contact');
+});
 //------------------------------------------
 
 // catch 404 and forward to error handler
