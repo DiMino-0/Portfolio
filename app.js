@@ -54,9 +54,11 @@ app.use(helmet.contentSecurityPolicy({
   }
  }));
 app.use(compression());
-app.listen(process.env.PORT || port, () => {
-  console.log(`Server is running...`);
-});
+var portNum = server.listen(process.env.PORT || 3000);
+app.listen(portNum);
+// app.listen(process.env.PORT || port, () => {
+//   console.log(`Server is running...`);
+// });
 
 //routes ----------------------------------
 app.use('/', indexRouter);
