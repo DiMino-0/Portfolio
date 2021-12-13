@@ -9,7 +9,9 @@
     "buildAll": "npm run buildjs && npm run buildcss"
   },
   "babel": {
-    "presets": ["@babel/preset-env"]
+    "presets": [
+      "@babel/preset-env"
+    ]
   },
   "dependencies": {
     "@babel/cli": "^7.16.0",
