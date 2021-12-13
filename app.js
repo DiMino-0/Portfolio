@@ -7,11 +7,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var compression = require('compression');
 var helmet = require('helmet');
-var portNum = server.listen(process.env.PORT || 3000);
-
-//server setup
-const port = 3000;
 const app = express();
+var portNum = app.listen(process.env.PORT || 3000);
 
 // Set Content Security Policies
 const scriptSources = 
