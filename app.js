@@ -1,20 +1,17 @@
 //attributes:
 var createError = require('http-errors');
 var express = require('express');
+var router = express.Router();
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var compression = require('compression');
 var helmet = require('helmet');
-
-//routes
-var indexRouter = require('./routes/index');
-var projectsRouter = require('./routes/projects');
-var contactRouter = require('./routes/contact');
-
-//server setup
-const port = 3000;
 const app = express();
+
+var indexRouter = require('./routes/index');
+var contactRouter = require('./routes/contact');
+var projectsRouter = require('./routes/projects');
 
 // Set Content Security Policies
 const scriptSources = 
@@ -54,8 +51,8 @@ app.use(helmet.contentSecurityPolicy({
   }
  }));
 app.use(compression());
-app.listen(process.env.port || port, () => {
-  console.log(`Server is running on port: ${port}`);
+app.listen(process.env.PORT || 3000, () => {
+  console.log(`Server is running...`);
 });
 
 //routes ----------------------------------
