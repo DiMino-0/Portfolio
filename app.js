@@ -54,6 +54,8 @@ app.listen(process.env.PORT || 3000, () => {
   console.log(`Server is running...`);
 });
 
+//openssl s_client -connect clear-dolphin-fq4jctj6d4tkfqwlwrodven7.herokudns.com:443 -servername www.jdimino.dev
+
 //routes ----------------------------------
 app.use('/', indexRouter);
 app.use('/contact', contactRouter);
