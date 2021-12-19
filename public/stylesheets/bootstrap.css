@@ -9791,3 +9791,7 @@ textarea.form-control-lg {
     border-bottom: none;
     cursor: help;
 }
+<
+html{
+    scroll-behavior: smooth;
+}
